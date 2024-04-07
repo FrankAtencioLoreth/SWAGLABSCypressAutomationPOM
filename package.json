@@ -1,0 +1,27 @@
+{
+  "name": "swaglabscypressautmationpom",
+  "version": "1.0.0",
+  "description": "Automation project using Cypress and Page Object Model",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrankAtencioLoreth/SWAGLABSCypressAutomationPOM.git"
+  },
+  "keywords": [
+    "Automation",
+    "Cypress",
+    "POM"
+  ],
+  "author": "Frank Atencio Loreth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FrankAtencioLoreth/SWAGLABSCypressAutomationPOM/issues"
+  },
+  "homepage": "https://github.com/FrankAtencioLoreth/SWAGLABSCypressAutomationPOM#readme",
+  "devDependencies": {
+    "cypress": "^13.7.2"
+  }
+}
