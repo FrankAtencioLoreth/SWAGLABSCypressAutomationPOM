@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+const cucumber = require('cypress-cucumber-preprocessor').default
 
 module.exports = defineConfig({
 
@@ -12,7 +13,10 @@ module.exports = defineConfig({
   defaultCommandTimeout: 10000,
 
   e2e: {
-    setupNodeEvents(on, config) {},
+    "specPattern": "**/*.feature",
+    setupNodeEvents(on, config) {
+      on('file:preprocessor', cucumber())
+    },
     baseUrl: 'https://www.saucedemo.com/',
   },
 
