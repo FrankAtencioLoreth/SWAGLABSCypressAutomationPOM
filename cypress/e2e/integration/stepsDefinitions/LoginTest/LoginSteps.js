@@ -10,16 +10,24 @@ Given('I go to the login web page', () => {
     cy.url().should('contain', authenticate);
 });
 
-When('I enter my credentials', () => {
-    cy.log(`Username ${userName} and Password ${password}`);
-    login.typeUserName(userName);
-    login.typePassword(password);
+When('I enter my credentials', (datatable) => {
+
+    datatable.hashes().forEach(element => {
+        cy.log(`Username ${element.username} and Password ${element.password}`);
+        login.typeUserName(element.username);
+        login.typePassword(element.password);
+    });
+    
 });
 
 And('I click on the login button', () => {
     login.submitLogin();
 });
 
-Then('I should see that the URL contains the path {string}', (path) => {
-    cy.url().should('contain', path);
+Then('I should see that the URL contains the path {string}', (data) => {
+    cy.url().should('contain', data);
+});
+
+Then('I should see an error message {string}', (data) => {
+   login.get.errorMessage().should('contain', data);
 });

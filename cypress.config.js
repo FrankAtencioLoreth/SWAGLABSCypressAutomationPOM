@@ -13,11 +13,13 @@ module.exports = defineConfig({
   defaultCommandTimeout: 10000,
 
   e2e: {
+    baseUrl: 'https://www.saucedemo.com/',
+
     "specPattern": "**/*.feature",
+    
     setupNodeEvents(on, config) {
       on('file:preprocessor', cucumber())
-    },
-    baseUrl: 'https://www.saucedemo.com/',
+    }
   },
 
   env: {
