@@ -1,9 +1,16 @@
-const {Given, When, And, Then} = require("cypress-cucumber-preprocessor/steps");
+const {Given, When, And, Then, Before, After} = require("cypress-cucumber-preprocessor/steps");
 const { login } = require('../../../../support/PageObjectModel/Login.Page');
 const { authenticate, inventory } = Cypress.env('endpoint');
 const { userName, password } = Cypress.env('standarUser');
 const { userNameError, passwordError } = Cypress.env('errorUser');
 
+Before(() => {
+    cy.log('Started test');
+});
+
+After(() => {
+    cy.log('Finished test');
+});
 
 Given('I go to the login web page', () => {
     cy.visit('/');

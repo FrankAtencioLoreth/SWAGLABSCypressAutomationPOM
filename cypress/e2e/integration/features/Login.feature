@@ -12,7 +12,7 @@ Scenario: Validate login successfully
     Then I should see that the URL contains the path "/inventory.html"
 
 @smoke @LoginUnsuccessfuly 
-Scenario: Validate login successfully
+Scenario: Validate login unsuccessfully
     Given I go to the login web page
     When I enter my credentials
         |username     |password            |

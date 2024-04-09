@@ -16,9 +16,9 @@ module.exports = defineConfig({
     baseUrl: 'https://www.saucedemo.com/',
 
     "specPattern": "**/*.feature",
-    
+
     setupNodeEvents(on, config) {
-      on('file:preprocessor', cucumber())
+      on('file:preprocessor', cucumber());
     }
   },
 
